@@ -1,0 +1,66 @@
+{
+  "main": {
+    "aboutMe": {
+      "title": "About me",
+      "description": "Hi, I'm 18 years old, I'm a Junior Frontend Developer. I have been in the frontend field for a year now, and after a long study, I am looking for a job to gain experience in developing a real project. By personal qualities. I strive for constant development. At the same time, I am trying to learn backend development - so in the future I plan to become a backend or fullstack developer."
+    },
+    "skills": {
+      "title": "Skills",
+      "skillsItems": [
+        {
+          "id": 1,
+          "title": "Language:",
+          "description": "JavaScript, TypeScript"
+        },
+        {
+          "id": 2,
+          "title": "Frameworks:",
+          "description": "React, NextJS"
+        },
+        {
+          "id": 3,
+          "title": "CVS:",
+          "description": "Git"
+        },
+        {
+          "id": 4,
+          "title": "IDE:",
+          "description": "Web Storm, Brackets, VS Code, Visual Studio"
+        },
+        {
+          "id": 5,
+          "title": "DataBase:",
+          "description": "PostgreSQL"
+        },
+        {
+          "id": 6,
+          "title": "Other:",
+          "description": "Figma"
+        }
+      ]
+    },
+    "english": {
+      "title": "English level",
+      "description": "A1"
+    },
+    "education": {
+      "title": "Education",
+      "educationInfo": [
+        {
+          "id": 1,
+          "description": "I am a college student, studying in the profession \"Ensuring information security of automated systems\""
+        },
+        {
+          "id": 2,
+          "description": "JavaScript Algorithms and Data Structures"
+        }
+      ]
+    },
+    "workExperience": {
+      "title": "Work experience",
+      "workExperience": {
+        "description": "Two months internship at Only.digital"
+      }
+    }
+  }
+}

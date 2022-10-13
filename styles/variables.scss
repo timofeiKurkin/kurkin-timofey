@@ -1,0 +1,27 @@
+$white: #FFFFFF;
+$black: #000000;
+$grey: #5B5B5B;
+$light-grey: #DEDEDE;
+$text-error: #b73b3b;
+$background: #1C1C1C;
+$green: #577a33;
+
+$anim: color ease-in .5s;
+$anim-time: 800ms;
+
+// BREAKPOINTS
+$XS: 375px;
+$SM: 640px;
+$MD: 768px;
+$LG: 1024px;
+$XL: 1280px;
+$XXL: 1440px;
+$FHD: 1920px;
+
+:export {
+    white: $white;
+    black: $black;
+    grey: $grey;
+    lightGrey: $light-grey;
+    background: $background;
+}

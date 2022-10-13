@@ -1,0 +1,24 @@
+{
+  "navigation": [
+    {
+      "id": 1,
+      "title": "home",
+      "path": "/"
+    },
+    {
+      "id": 2,
+      "title": "about me",
+      "path": "/about"
+    },
+    {
+      "id": 3,
+      "title": "project",
+      "path": "/project"
+    },
+    {
+      "id": 4,
+      "title": "contacts",
+      "path": "/contacts"
+    }
+  ]
+}

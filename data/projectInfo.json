@@ -1,0 +1,31 @@
+{
+  "main": [
+    {
+      "id": 1,
+      "title": "pem.com",
+      "description": "Website of the construction and installation organization",
+      "stack": "Stack:",
+      "stackDescription": "NextJS, JavaScript",
+      "repo": "Repository",
+      "link": "https://github.com/timofeiKurkin/pem"
+    },
+    {
+      "id": 2,
+      "title": "paint-online.com",
+      "description": "Graphic editor online",
+      "stack": "Stack:",
+      "stackDescription": "React, axios, mobx, Node.js, express, cors",
+      "repo": "Repository",
+      "link": "https://github.com/timofeiKurkin/paint-online"
+    },
+    {
+      "id": 3,
+      "title": "shop.com",
+      "description": "Own project - online electronics store",
+      "stack": "Stack:",
+      "stackDescription": "React, Node.js, PostgreSQL, Postman, axios, mobx, express.",
+      "repo": "Repository",
+      "link": "https://github.com/timofeiKurkin/online-store"
+    }
+  ]
+}

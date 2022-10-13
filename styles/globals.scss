@@ -1,0 +1,397 @@
+@import 'variables.scss';
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    background-color: $background;
+
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.next {
+}
+
+.curtains {
+    //width: 100%;
+    //height: 100%;
+    position: absolute;
+
+    &__top, &__bottom, &__topActive, &__bottomActive {
+        width: 100vw;
+        height: 52%;
+        left: 0;
+        right: 0;
+        position: fixed;
+        background-color: $white;
+        z-index: 99;
+        //transition: all 1.8s ease;
+        transform: translateY(0);
+    }
+
+    &__top, &__topActive {
+        top: 0;
+    }
+
+    &__bottom, &__bottomActive {
+        bottom: 0;
+    }
+
+    &__topActive {
+        transform: translateY(-110%);
+        transition: transform 1.5s ease-out;
+    }
+
+    &__bottomActive {
+        transform: translateY(110%);
+        transition: transform 1.5s ease-out;
+    }
+
+    &__logo, &__logoActive {
+        position: fixed;
+        top: 50%;
+        text-align: center;
+        bottom: 50%;
+        z-index: 999;
+        width: 100%;
+        //overflow: hidden;
+        //height: 27px;
+
+        svg {
+
+            //transform: translateY(27px);
+            width: 162px;
+            height: 27px;
+        }
+    }
+
+    &__logo {
+        overflow: hidden;
+        height: 27px;
+        transition: height .7s ease-in;
+        //opacity: 1;
+
+        svg {
+            //transition: transform .7s ease;
+        }
+    }
+
+    &__logoActive {
+        overflow: hidden;
+        height: 0;
+        transition: height .7s ease-in;
+        //opacity: 0;
+
+        svg {
+            //transform: translateY(0);
+            //transition: transform .7s ease;
+        }
+    }
+}
+
+
+.ordinaryBackground {
+}
+
+.mainBackground {
+    height: 100vh;
+
+    background-image: url("../public/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+@media (min-width: $XS) {
+    .navigation {
+        color: $black;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 639px) {
+}
+
+@media (min-width: $LG) {
+    .navigation {
+        color: $grey;
+        letter-spacing: 1.5px;
+        font-size: 14px;
+
+    }
+}
+
+@media (max-width: 1279px) {
+}
+
+@media (min-width: $FHD) {
+
+
+    .navigation {
+        letter-spacing: 1.5px;
+        font-size: 14px;
+    }
+}
+
+.wrapper {
+    max-width: 1850px;
+    margin: 0 auto;
+}
+
+.navigation {
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: $anim;
+
+    &:hover {
+        color: $light-grey;
+    }
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.with-line {
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: $light-grey;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.title {
+    position: relative;
+
+    font-size: 16px;
+    line-height: 16.8px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.text, .text-error {
+    font-weight: 400;
+    line-height: 135%;
+    font-size: 16px;
+}
+
+.color-light-grey {
+    color: $light-grey;
+}
+
+.color-white {
+    color: $white;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.is-active {
+    color: $light-grey;
+}
+
+.text-error {
+    color: $text-error;
+}
+
+.page {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    transition: color, background-color .5s ease;
+}
+
+.page-enter {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity $anim-time, transform $anim-time;
+}
+
+.page-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.page-exit-active {
+    opacity: 1;
+    transform: scale(0.9);
+    transition: opacity $anim-time, transform $anim-time;
+}
+
+
+// ================================================================
+
+
+.error-page {
+    padding: 90px 0 40px 0;
+    display: grid;
+    grid-template-areas:
+    'top'
+    'content';
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 78px 1fr;
+    grid-row-gap: 190px;
+
+    &__logo-wrapper {
+        grid-area: top;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        padding-bottom: 15px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: $light-grey;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    &__logo {
+        cursor: pointer;
+    }
+
+    &__content {
+        grid-area: content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+
+    }
+
+    &__body {
+        margin-top: 90px;
+        text-align: center;
+    }
+
+    &__text {
+        color: $light-grey;
+        font-size: 18px;
+        line-height: 105%;
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+
+    &__body-btn {
+        width: 160px;
+        margin: 0 auto;
+    }
+
+    &__btn {
+        border: 2px solid $grey;
+        border-radius: 30px;
+
+        cursor: pointer;
+        padding: 16px 34px;
+        font-weight: 400;
+        line-height: 105%;
+        color: $light-grey;
+        font-size: 16px;
+
+        transition: border .5s ease;
+
+        &:hover {
+            color: $white;
+            border-color: $light-grey;
+        }
+    }
+
+    &__year {
+        color: $grey;
+        letter-spacing: 1.5px;
+        font-weight: 400;
+        font-size: 14px;
+
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column-reverse;
+
+        transition: $anim;
+    }
+    &__year-light {
+        color: $light-grey;
+    }
+
+    &__website {
+        max-width: 100px;
+        text-align: right;
+        margin-bottom: 15px;
+    }
+    &__website-about {
+        color: $grey;
+    }
+    &__website-link {
+        line-height: 130%;
+        font-weight: 600;
+        font-size: 12px;
+        transition: $anim;
+
+        &:hover {
+            color: $light-grey;
+        }
+    }
+}

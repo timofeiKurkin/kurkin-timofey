@@ -1,0 +1,162 @@
+@import 'variables';
+
+$heightBurger: 25px;
+$animBurger : transform .8s ease;
+
+.burger {
+    //margin-right: 10px;
+    right: 8px;
+    top: 50%;
+    width: 20px;
+
+    position: fixed;
+    z-index: 50;
+
+
+    &__btn, &__btnActive {
+
+        //min-height: $heightBurger;
+        //width: 20px;
+        cursor: pointer;
+
+        &:after, &:before {
+            transition: $animBurger;
+            content: '';
+            position: absolute;
+            height: $heightBurger;
+            width: 2px;
+            top: 0;
+        }
+        &:after {
+            transform: translateY(-12px);
+            left: 0;
+        }
+
+        &:before {
+            transform: translateY(12px);
+            right: 0;
+        }
+    }
+
+    &__btn {
+        &:after, &:before {
+            background-color: $white;
+        }
+    }
+
+    &__btnActive {
+        &:after {
+            background-color: $grey;
+            transform: translateY(12px);
+        }
+
+        &:before {
+            background-color: $grey;
+            transform: translateY(-12px);
+        }
+    }
+
+    &__span, &__spanActive {
+        position: absolute;
+        height: $heightBurger;
+        width: 2px;
+        left: 9px;
+        top: 0;
+        transition: $animBurger;
+    }
+
+    &__span {
+        background-color: $white;
+    }
+
+    &__spanActive {
+        background-color: $grey;
+    }
+}
+
+.navigation {
+    background-color: $light-grey;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(-100%);
+    transition: transform .5s ease-in;
+
+    text-align: center;
+
+    &__content {
+        width: 60%;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__itemActive {
+        color: $grey;
+    }
+
+}
+
+.navigationActive {
+    background-color: $light-grey;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    position: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(0);
+    transition: transform .5s ease-in;
+
+    text-align: center;
+
+
+
+    &__item {
+        margin-bottom: 30px;
+    }
+
+}
+
+.menu {
+    width: 30px;
+    height: 100vh;
+    //background-color: $black;
+
+    position: fixed;
+    z-index: 50;
+
+    right: 0;
+}
+
+.prompt, .promptActive {
+    position: fixed;
+    width: 41px;
+    right: 0;
+    bottom: 50px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+}
+.prompt {
+    color: $white;
+}
+.promptActive {
+    color: $grey;
+}
