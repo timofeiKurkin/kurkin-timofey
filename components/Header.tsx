@@ -37,7 +37,7 @@ const Header = ({children, media}) => {
 						{sizeWindow.width >= 1024 &&
 							<div className={styles.website}>
 								<div className={styles.website__about}>
-									<a href="https://github.com/timofeiKurkin/kurkin"
+									<a href="https://github.com/timofeiKurkin/kurkin-timofey"
 									   target={'_blank'}
 									   rel="noreferrer"
 									   className={styles.website__link}

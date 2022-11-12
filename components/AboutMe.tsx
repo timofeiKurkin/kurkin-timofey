@@ -12,9 +12,10 @@ import {
 	ImageAboutMe,
 	Item, SkillsList
 } from "../styles/AboutMeStyle";
-// import myPhoto from '/myPhoto.webp'
+import {aboutType, mediaType} from "../types";
+import {FC} from "react";
 
-const AboutMe = ({info, props}) => {
+const AboutMe: FC<{ info: aboutType, props: mediaType }> = ({info, props}) => {
 	const about = info.aboutMe
 	const skills = info.skills
 	const english = info.english
@@ -26,7 +27,7 @@ const AboutMe = ({info, props}) => {
 		<main className='main-about-me'>
 			<Wrapper {...props}>
 				<ImageAboutMe {...props}>
-					<Image priority src={'/myPhoto.webp'} layout={'fill'} objectFit={'cover'} alt={'My Image'}/>
+					<Image src={'/myPhoto.webp'} priority  layout={'fill'} objectFit={'cover'} alt={'My Image'}/>
 				</ImageAboutMe>
 				<Content {...props}>
 					<About {...props}>

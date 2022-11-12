@@ -1,9 +1,9 @@
 import Link from "next/link";
 import useWindowSize from "../hooks/useWindowSize";
-import {useRouter} from "next/router";
 import Head from "next/head";
+import {NextPage} from "next";
 
-const Custom404 = () => {
+const Custom404: NextPage = () => {
 	const sizeWindow = useWindowSize()
 
 	return (

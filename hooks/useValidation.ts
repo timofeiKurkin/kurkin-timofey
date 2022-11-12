@@ -1,19 +1,19 @@
 import {useEffect, useState} from "react";
+import {validationsType} from "../types";
 
 
-const UseValidation = (value, validations) => {
-	const [isEmpty, setEmpty] = useState(true)
-	const [minLength, setMinLength] = useState(false)
-	const [maxLength, setMaxLength] = useState(false)
+const UseValidation = (value: string, validations: validationsType) => {
+	const [isEmpty, setEmpty] = useState<boolean>(true)
+	const [minLength, setMinLength] = useState<boolean>(false)
+	const [maxLength, setMaxLength] = useState<boolean>(false)
 
-	const [emailError, setEmailError] = useState(false)
-	const [inputValid, setInputValid] = useState(false)
+	const [emailError, setEmailError] = useState<boolean>(false)
+	const [inputValid, setInputValid] = useState<boolean>(false)
 
-	const [isEmptyError, setEmptyError] = useState('')
-	const [minLengthError, setMinLengthError] = useState('')
-	const [maxLengthError, setMaxLengthError] = useState('')
-	const [emailValidError, setEmailValidError] = useState('')
-
+	const [isEmptyError, setEmptyError] = useState<string>('')
+	const [minLengthError, setMinLengthError] = useState<string>('')
+	const [maxLengthError, setMaxLengthError] = useState<string>('')
+	const [emailValidError, setEmailValidError] = useState<string>('')
 
 	useEffect(() => {
 		for (const validation in validations) {

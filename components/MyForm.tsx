@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {FC, FormEvent, useState} from "react"
 import useInput from "../hooks/useInput";
 import {
 	Error,
@@ -11,30 +11,31 @@ import {
 	TextError
 } from "../styles/MyFormStyle";
 import {Btn, BtnText} from "../styles/ButtonStyle";
+import {mediaType} from "../types";
 
 
-const MyForm = ({props}) => {
+const MyForm: FC<{props: mediaType}> = ({props}) => {
 
 	const name = useInput('', 'name', {isEmpty: true, minLength: 2, maxLength: 15})
 	const email = useInput('', 'email', {isEmpty: true, minLength: 3, isValid: true})
 	const message = useInput('', 'message', {isEmpty: false, maxLength: 200})
 
-	const [submit, setSubmit] = useState(false)
+	const [submit, setSubmit] = useState<boolean>(false)
 
-	const clearLocalStorage = (e) => {
+	const clearLocalStorage = (e: FormEvent<HTMLFormElement>) => {
 		localStorage.clear()
 	}
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 
-		const data = `
+		const data: string = `
 			Name: ${name.value},  
 			Email: ${email.value},  
 			Message: ${message.value}
 		`
 
-		const endpoint = `https://api.telegram.org/botTOKEN/sendMessage?chat_id=CHAT_ID&parse_mode=html&text=${data}`
+		const endpoint = `https://api.telegram.org/bot5450869520:AAEGaLcQvll7_na4Cfv-GncKrCVqcUmd2kQ/sendMessage?chat_id=-802669851&parse_mode=html&text=${data}`
 
 		const options = {
 			method: 'POST',
@@ -68,8 +69,8 @@ const MyForm = ({props}) => {
 						type="text"
 						name="name"
 						className={(name.isDirty && name.isEmpty) ? "text-error" : "text"}
-						onBlur={e => name.onBlur(e)}
-						onChange={e => name.onChange(e)}
+						onBlur={(e: FormEvent<HTMLFormElement>) => name.onBlur(e)}
+						onChange={(e: FormEvent<HTMLFormElement>) => name.onChange(e)}
 						placeholder="your name"
 						value={name.value}
 					/>
@@ -92,8 +93,8 @@ const MyForm = ({props}) => {
 						type="text"
 						name="email"
 						className={(email.isDirty && email.isEmpty) ? "text-error" : "text"}
-						onBlur={e => email.onBlur(e)}
-						onChange={e => email.onChange(e)}
+						onBlur={(e: FormEvent<HTMLFormElement>) => email.onBlur(e)}
+						onChange={(e: FormEvent<HTMLFormElement>) => email.onChange(e)}
 						placeholder="your email"
 						value={email.value}
 					/>
@@ -118,8 +119,8 @@ const MyForm = ({props}) => {
 						name="message"
 						id="1"
 						className={(message.isDirty && message.isEmpty) ? "text-error" : "text"}
-						onBlur={e => message.onBlur(e)}
-						onChange={e => message.onChange(e)}
+						onBlur={(e: FormEvent<HTMLFormElement>) => message.onBlur(e)}
+						onChange={(e: FormEvent<HTMLFormElement>) => message.onChange(e)}
 						placeholder="tell us about your project"
 						value={message.value}
 					></TextareaForm>
@@ -132,7 +133,7 @@ const MyForm = ({props}) => {
 					{...props}
 					type='submit'
 					disabled={!name.inputValid || !email.inputValid || !message.inputValid}
-					onClick={() => clearLocalStorage()}
+					onClick={(e: FormEvent<HTMLFormElement>) => clearLocalStorage(e)}
 				>
 					<BtnText {...props}>
 						submit

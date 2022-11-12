@@ -1,21 +1,24 @@
 import {useState, useEffect} from "react";
 
+interface sizeType {
+	width: number,
+	height: number
+}
+
 const useWindowSize = () => {
-	const [windowSize, setWindowSize] = useState({
+	const [windowSize, setWindowSize] = useState<sizeType>({
 		width: undefined,
 		height: undefined,
 	})
 
-	const [mobile, setMobile] = useState(false)
-
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
-			function handleResize() {
+			const handleResize = () => {
 				setWindowSize({
 					width: window.innerWidth,
 					height: window.innerHeight,
 				})
-			}
+			};
 
 			window.addEventListener("resize", handleResize)
 

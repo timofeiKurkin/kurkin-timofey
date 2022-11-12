@@ -1,8 +1,10 @@
 import '../styles/globals.scss'
 import Layout from "../components/Layout";
 import Custom404 from "./404";
+import type {AppProps} from "next/app";
+import {mediaType} from "../types";
 
-const media = {
+const media: mediaType = {
 	media: {
 		phone375_639: "(min-width: 375px) and (max-width: 639px)",
 		phone640_767: "(min-width: 640px) and (max-width: 767px)",
@@ -23,18 +25,19 @@ const media = {
 	}
 }
 
-const MyApp = ({Component, pageProps}) => (
-	<>
-		{Component === Custom404 ?
-			<Component {...pageProps}/>
-			:
-			<Layout media={media}>
-				<Component media={media} {...pageProps} />
-			</Layout>
-		}
-	</>
-
-)
+const MyApp = ({Component, pageProps}: AppProps) => {
+	return (
+		<>
+			{Component === Custom404 ?
+				<Component {...pageProps}/>
+				:
+				<Layout media={media}>
+					<Component media={media} {...pageProps} />
+				</Layout>
+			}
+		</>
+	)
+}
 
 export default MyApp
 

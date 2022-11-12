@@ -4,7 +4,7 @@ import nav from "../data/navigation.json";
 import Link from "next/link";
 
 const BurgerMenu = ({pathname, navigation}) => {
-	const [menuActive, setMenuActive] = useState(false)
+	const [menuActive, setMenuActive] = useState<boolean>(false)
 
 	return (
 		<div className={styles.menu} onClick={() => setMenuActive(!menuActive)}>

@@ -1,7 +1,9 @@
 import {Head, Html, Main, NextScript} from "next/document";
 import {ServerStyleSheet} from "styled-components";
+import {FC} from "react";
 
-export default function Document() {
+const Document: FC = () => {
+
 	function getInitialProps({ renderPage }) {
 		const sheet = new ServerStyleSheet();
 
@@ -13,6 +15,7 @@ export default function Document() {
 
 		return { ...page, styleTags };
 	}
+
 	return (
 		<Html lang='en'>
 			<Head>
@@ -30,3 +33,5 @@ export default function Document() {
 		</Html>
 	);
 };
+
+export default Document

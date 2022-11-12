@@ -1,7 +1,9 @@
 import AboutMe from "../components/AboutMe";
 import aboutInfo from '../data/aboutInfo.json'
+import {GetStaticProps, NextPage} from "next";
+import {aboutType, mediaType} from "../types";
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
 	const data = aboutInfo
 
 	if (!data) {
@@ -17,7 +19,7 @@ export const getStaticProps = async () => {
 	}
 }
 
-const About = ({content, media}) => {
+const About: NextPage<{ content: aboutType, media: mediaType }> = ({content, media}) => {
 	return (
 		<AboutMe info={content} props={media}/>
 	);

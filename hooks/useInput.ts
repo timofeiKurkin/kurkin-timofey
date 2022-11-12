@@ -1,9 +1,10 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import useValidation from "./useValidation";
 import useLocalStorage from "./useLocalStorage";
+import {validationsType} from "../types";
 
 
-const UseInput = (initialValue, key, validations) => {
+const UseInput = (initialValue: string, key: string, validations: validationsType) => {
 	const [value, setValue] = useLocalStorage(key, initialValue)
 
 	const [isDirty, setDirty] = useState(false)

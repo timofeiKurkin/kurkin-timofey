@@ -1,6 +1,8 @@
 import {ContentItem} from "../styles/MainStyle";
+import {FC} from "react";
+import {mediaType} from "../types";
 
-const Main = ({props}) => {
+const Main: FC<{ props: mediaType }> = ({props}) => {
 	return (
 		<main>
 			<div>

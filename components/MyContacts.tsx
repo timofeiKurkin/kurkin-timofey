@@ -9,8 +9,10 @@ import {
 	MainContacts, SocialContactsItem,
 	SocialContactsList
 } from "../styles/MyContactsStyle";
+import {FC} from "react";
+import {mediaType} from "../types";
 
-const MyContacts = ({props}) => {
+const MyContacts: FC<{props: mediaType}> = ({props}) => {
 
 	return (
 		<MainContacts>

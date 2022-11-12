@@ -1,15 +1,15 @@
 import Head from "next/head";
 import Header from "./Header";
-import Footer from "./Footer";
 import {useRouter} from "next/router";
-import {CSSTransition, SwitchTransition} from 'react-transition-group'
-import {useEffect, useState} from "react";
+import {FC, ReactElement, useEffect, useState} from "react";
+import {mediaType} from "../types";
 
 
-const Layout = ({children, media}) => {
-	const defaultTitle = 'home.'
-	const [open, setOpen] = useState(false)
-	const [logoVisible, setLogoVisible] = useState(false)
+const Layout: FC<{children: ReactElement, media: mediaType}> = ({children, media}) => {
+
+	const defaultTitle: string = 'home.'
+	const [open, setOpen] = useState<boolean>(false)
+	const [logoVisible, setLogoVisible] = useState<boolean>(false)
 
 	const {
 		asPath,

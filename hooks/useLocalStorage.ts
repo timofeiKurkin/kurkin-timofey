@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 
-const UseLocalStorage = (key, initialValue) => {
+const UseLocalStorage = (key: string, initialValue: string) => {
 	const getStorageValue = (key, initialValue) => {
 		if(typeof window !== 'undefined') {
 			const value = localStorage.getItem(key)
-			const parse = JSON.parse(value)
+			const parse: string = JSON.parse(value)
 			return parse || initialValue
 		}
 	}
