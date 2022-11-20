@@ -116,3 +116,11 @@ export const ProjectRepoWrapper = styled.a `
     left: 0;
   }
 `
+
+export const ArrowSize = styled.p `
+  display: inline-block;
+  width: 17px;
+  height: 18px;
+  margin-left: 17px;
+  fill: ${props => props.color.$white};
+`

@@ -97,6 +97,7 @@ $animBurger : transform .8s ease;
     &__item {
         margin-bottom: 10px;
         padding: 10px 20px;
+        user-select: none;
         &:last-child {
             margin-bottom: 0;
         }

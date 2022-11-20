@@ -34,6 +34,4 @@ export const ContentItem = styled.div `
     font-size: 120px;
     line-height: 130%;
   }
-
-
 `

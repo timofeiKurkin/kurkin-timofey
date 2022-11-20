@@ -120,6 +120,9 @@
         &__wrapper {
             grid-column-gap: 60px;
         }
+        &__contentMain {
+            height: 65vh;
+        }
     }
 }
 @media (max-width: 1439px) {
@@ -129,6 +132,9 @@
         padding: 70px 40px 20px 40px;
         &__wrapper {
             grid-column-gap: 80px;
+        }
+        &__contentMain {
+            height: 70vh;
         }
     }
 }
@@ -234,6 +240,7 @@
 
     &__link {
         margin-bottom: 16px;
+        user-select: none;
         &:last-child {
             margin-bottom: 0;
         }
