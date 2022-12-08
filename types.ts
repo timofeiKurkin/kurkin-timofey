@@ -34,8 +34,6 @@ export type projectType = {
     link: string
 }
 
-
-
 export type aboutType = {
     aboutMe: {
         title: string,
@@ -76,5 +74,13 @@ export interface validationsType {
     isEmpty?: boolean,
     minLength?: number,
     maxLength?: number,
-    isValid?: boolean
+    isValid?: boolean,
+    nameValid?: boolean
+}
+
+export type NavigationType = {
+    id: number,
+    title: string,
+    path: string,
+    nodeRef?: any
 }

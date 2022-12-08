@@ -1,8 +1,10 @@
 import {ContentItem} from "../styles/MainStyle";
 import {FC} from "react";
-import {mediaType} from "../types";
+import {useAppContext} from "../context/store";
 
-const Main: FC<{ props: mediaType }> = ({props}) => {
+const Main: FC = () => {
+	const props = useAppContext()
+
 	return (
 		<main>
 			<div>

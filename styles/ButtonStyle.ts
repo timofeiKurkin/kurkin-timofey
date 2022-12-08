@@ -6,6 +6,9 @@ export const Btn = styled.button `
   border-radius: 29px;
   background: none;
   cursor: pointer;
+  &:disabled {
+    cursor: auto;
+  }
 `
 
 export const BtnText = styled.span `

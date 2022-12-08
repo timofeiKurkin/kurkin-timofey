@@ -1,12 +1,11 @@
 import Head from "next/head";
 import Header from "./Header";
 import {useRouter} from "next/router";
-import {FC, ReactElement, useEffect, useState} from "react";
+import {FC, ReactNode, useEffect, useState} from "react";
 import {mediaType} from "../types";
 
 
-const Layout: FC<{children: ReactElement, media: mediaType}> = ({children, media}) => {
-
+const Layout: FC<{children: ReactNode}> = ({children}) => {
 	const defaultTitle: string = 'home.'
 	const [open, setOpen] = useState<boolean>(false)
 	const [logoVisible, setLogoVisible] = useState<boolean>(false)
@@ -45,7 +44,7 @@ const Layout: FC<{children: ReactElement, media: mediaType}> = ({children, media
 				</div>
 				<div className={pathname === '/' ? 'mainBackground' : 'ordinaryBackground'}>
 					<div className='wrapper'>
-						<Header media={media}>
+						<Header>
 							{children}
 						</Header>
 					</div>

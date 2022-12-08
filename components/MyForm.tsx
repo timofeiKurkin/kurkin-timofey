@@ -11,12 +11,13 @@ import {
 	TextError
 } from "../styles/MyFormStyle";
 import {Btn, BtnText} from "../styles/ButtonStyle";
-import {mediaType} from "../types";
+import {useAppContext} from "../context/store";
 
 
-const MyForm: FC<{props: mediaType}> = ({props}) => {
+const MyForm: FC = () => {
+	const props = useAppContext()
 
-	const name = useInput('', 'name', {isEmpty: true, minLength: 2, maxLength: 15})
+	const name = useInput('', 'name', {isEmpty: true, minLength: 2, maxLength: 15, nameValid: true})
 	const email = useInput('', 'email', {isEmpty: true, minLength: 3, isValid: true})
 	const message = useInput('', 'message', {isEmpty: false, maxLength: 200})
 
@@ -83,6 +84,9 @@ const MyForm: FC<{props: mediaType}> = ({props}) => {
 
 						{(name.maxLength) &&
 							<TextError {...props}>{name.maxLengthError}</TextError>}
+
+						{(name.nameError) &&
+							<TextError {...props}>{name.nameValidError}</TextError>}
 					</Error>
 
 				</InputWrapper>

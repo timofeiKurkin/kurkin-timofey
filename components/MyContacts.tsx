@@ -11,14 +11,16 @@ import {
 } from "../styles/MyContactsStyle";
 import {FC} from "react";
 import {mediaType} from "../types";
+import {useAppContext} from "../context/store";
 
-const MyContacts: FC<{props: mediaType}> = ({props}) => {
+const MyContacts: FC = () => {
+	const props = useAppContext()
 
 	return (
 		<MainContacts>
 			<ContactsWrapper {...props}>
 				<div className='form-contacts'>
-					<MyForm props={props}/>
+					<MyForm/>
 				</div>
 				<Contacts>
 					<div className='contacts-contacts__wrapper'>

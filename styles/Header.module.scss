@@ -1,11 +1,9 @@
 @import 'variables';
 
 @media (min-width: 280px) {
-    
 }
 
 @media (max-width: 374px) {
-    
 }
 
 @media(min-width: $XS) {
@@ -142,12 +140,12 @@
 }
 @media(min-width: $FHD) {
     .header {
-        padding: 90px 0 40px 0;
+        padding: 80px 0 40px 0;
 
         &__wrapper {
             grid-template-columns: 1fr minmax(100px, auto);
             grid-template-rows: 78px minmax(550px, auto);
-            grid-row-gap: 100px;
+            grid-row-gap: 90px;
             grid-column-gap: 300px;
         }
         &__top {
@@ -224,6 +222,7 @@
     align-items: flex-end;
 
     transition: $anim;
+    user-select: none;
 
     &__light {
         color: $light-grey;

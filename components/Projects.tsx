@@ -10,8 +10,10 @@ import {
 import Link from "next/link";
 import {FC} from "react";
 import {mediaType, projectType} from "../types";
+import {useAppContext} from "../context/store";
 
-const Projects: FC<{projects: projectType[], props: mediaType}> = ({projects, props}) => {
+const Projects: FC<{projects: projectType[]}> = ({projects}) => {
+	const props = useAppContext()
 
 	return (
 		<main className='main-projects'>

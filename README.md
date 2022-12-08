@@ -1,11 +1,4 @@
-## About this project
 
-This repository is the source code for my [website](https://kurkin.vercel.app).
-
-Technologies used on the frontend:
-1. Lang: TypeScript
-2. Framework: NextJs
-3. Other: React Transition Group, Figma, Styled-components
 
 ## Getting Started
 

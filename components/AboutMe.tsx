@@ -14,14 +14,16 @@ import {
 } from "../styles/AboutMeStyle";
 import {aboutType, mediaType} from "../types";
 import {FC} from "react";
+import {useAppContext} from "../context/store";
 
-const AboutMe: FC<{ info: aboutType, props: mediaType }> = ({info, props}) => {
+const AboutMe: FC<{ info: aboutType }> = ({info}) => {
 	const about = info.aboutMe
 	const skills = info.skills
 	const english = info.english
 	const education = info.education
 	const work = info.workExperience
 
+	const props = useAppContext()
 
 	return (
 		<main className='main-about-me'>

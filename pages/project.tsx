@@ -1,7 +1,7 @@
 import Projects from "../components/Projects";
 import projectInfo from '../data/projectInfo.json'
 import {GetStaticProps, NextPage} from "next";
-import {mediaType, projectType} from "../types";
+import {projectType} from "../types";
 
 export const getStaticProps: GetStaticProps = async () => {
 	const data = projectInfo
@@ -19,10 +19,10 @@ export const getStaticProps: GetStaticProps = async () => {
 	}
 }
 
-const Project:NextPage<{project: projectType[], media: mediaType}> = ({project, media}) => {
+const Project:NextPage<{project: projectType[]}> = ({project}) => {
 
 	return (
-		<Projects projects={project} props={media}/>
+		<Projects projects={project}/>
 	);
 };
 

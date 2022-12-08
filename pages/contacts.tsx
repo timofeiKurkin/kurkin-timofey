@@ -1,10 +1,9 @@
 import MyContacts from "../components/MyContacts";
 import {NextPage} from "next";
-import {mediaType} from "../types";
 
-const Contacts: NextPage <{media: mediaType }> = ({media}) => {
+const Contacts: NextPage = () => {
 	return (
-		<MyContacts props={media}/>
+		<MyContacts/>
 	);
 };
 

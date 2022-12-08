@@ -6,18 +6,31 @@ const UseValidation = (value: string, validations: validationsType) => {
 	const [isEmpty, setEmpty] = useState<boolean>(true)
 	const [minLength, setMinLength] = useState<boolean>(false)
 	const [maxLength, setMaxLength] = useState<boolean>(false)
-
 	const [emailError, setEmailError] = useState<boolean>(false)
+	const [nameError, setNameError] = useState<boolean>(false)
+
 	const [inputValid, setInputValid] = useState<boolean>(false)
 
 	const [isEmptyError, setEmptyError] = useState<string>('')
 	const [minLengthError, setMinLengthError] = useState<string>('')
 	const [maxLengthError, setMaxLengthError] = useState<string>('')
 	const [emailValidError, setEmailValidError] = useState<string>('')
+	const [nameValidError, setNameValidError] = useState<string>('')
 
 	useEffect(() => {
 		for (const validation in validations) {
 			switch (validation) {
+				case 'nameValid':
+					const reName = /^([^0-9]*)$/
+					if(!reName.test(String(value).toLowerCase())) {
+						setNameError(true)
+						setNameValidError('Name cloud not be retrieved')
+					} else {
+						setNameError(false)
+						setNameValidError('')
+					}
+					break
+
 				case 'minLength':
 					if (value.length < validations[validation]) {
 						setMinLength(true)
@@ -63,12 +76,12 @@ const UseValidation = (value: string, validations: validationsType) => {
 	}, [value])
 
 	useEffect(() => {
-		if (isEmpty || minLength || maxLength || emailError) { // и сюда
+		if (isEmpty || minLength || maxLength || emailError || nameError) { // и сюда
 			setInputValid(false)
 		} else {
 			setInputValid(true)
 		}
-	}, [isEmpty, minLength, maxLength, emailError]) // все ошибки сюда
+	}, [isEmpty, minLength, maxLength, emailError, nameError]) // все ошибки сюда
 
 	return {
 		isEmpty,
@@ -76,10 +89,12 @@ const UseValidation = (value: string, validations: validationsType) => {
 		maxLength,
 		emailError,
 		inputValid,
+		nameError,
 
 		minLengthError,
 		maxLengthError,
 		emailValidError,
+		nameValidError,
 		isEmptyError
 	}
 };

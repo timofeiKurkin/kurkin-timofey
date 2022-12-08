@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import styles from "../styles/BurgerMenu.module.scss";
 import nav from "../data/navigation.json";
 import Link from "next/link";
+import {NavigationType} from "../types";
 
-const BurgerMenu = ({pathname, navigation}) => {
+const BurgerMenu: FC<{pathname: string, navigation: NavigationType[]}> = ({pathname, navigation}) => {
 	const [menuActive, setMenuActive] = useState<boolean>(false)
 
 	return (
