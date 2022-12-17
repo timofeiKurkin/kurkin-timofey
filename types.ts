@@ -84,3 +84,11 @@ export type NavigationType = {
     path: string,
     nodeRef?: any
 }
+
+export type svgType = {
+    id: number,
+    link: string,
+    path: string,
+    width: number,
+    height: number
+}

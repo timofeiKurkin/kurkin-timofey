@@ -1,6 +1,5 @@
 import MyForm from "./MyForm"
 import Image from "next/image"
-import svg from '../data/svg.json'
 import {
 	Contacts,
 	ContactsEmail,
@@ -10,10 +9,10 @@ import {
 	SocialContactsList
 } from "../styles/MyContactsStyle";
 import {FC} from "react";
-import {mediaType} from "../types";
+import {svgType} from "../types";
 import {useAppContext} from "../context/store";
 
-const MyContacts: FC = () => {
+const MyContacts: FC<{svg: svgType[]}> = ({svg}) => {
 	const props = useAppContext()
 
 	return (
@@ -37,7 +36,7 @@ const MyContacts: FC = () => {
 						<div className='social-contacts'>
 							<SocialContactsList>
 								{
-									svg.main.map(({id, link, path, width, height}) => (
+									svg.map(({id, link, path, width, height}) => (
 										<SocialContactsItem key={id} {...props}>
 											<a href={link} target={"_blank"} rel="noreferrer">
 												<Image src={path} width={width} height={height} alt={'social__item'}/>

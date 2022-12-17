@@ -1,28 +1,28 @@
 import AboutMe from "../components/AboutMe";
-import aboutInfo from '../data/aboutInfo.json'
 import {GetStaticProps, NextPage} from "next";
 import {aboutType} from "../types";
 
 export const getStaticProps: GetStaticProps = async () => {
-	const data = aboutInfo
+    const res = await fetch('https://backend-app-rho.vercel.app/api/about')
+    const data = await res.json()
 
-	if (!data) {
-		return {
-			notFound: true
-		}
-	}
+    if (!data.main) {
+        return {
+            notFound: true
+        }
+    }
 
-	return {
-		props: {
-			content: data.main
-		}
-	}
+    return {
+        props: {
+            content: data.main
+        }
+    }
 }
 
-const About: NextPage<{ content: aboutType}> = ({content}) => {
-	return (
-		<AboutMe info={content}/>
-	);
+const About: NextPage<{ content: aboutType }> = ({content}) => {
+    return (
+        <AboutMe info={content}/>
+    );
 };
 
 export default About;

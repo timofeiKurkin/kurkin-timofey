@@ -2,8 +2,6 @@ import Head from "next/head";
 import Header from "./Header";
 import {useRouter} from "next/router";
 import {FC, ReactNode, useEffect, useState} from "react";
-import {mediaType} from "../types";
-
 
 const Layout: FC<{children: ReactNode}> = ({children}) => {
 	const defaultTitle: string = 'home.'

@@ -1,10 +1,10 @@
 import Projects from "../components/Projects";
-import projectInfo from '../data/projectInfo.json'
 import {GetStaticProps, NextPage} from "next";
 import {projectType} from "../types";
 
 export const getStaticProps: GetStaticProps = async () => {
-	const data = projectInfo
+	const res = await fetch('https://backend-app-rho.vercel.app/api/project')
+	const data = await res.json()
 
 	if (!data) {
 		return {

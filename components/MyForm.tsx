@@ -36,7 +36,7 @@ const MyForm: FC = () => {
 			Message: ${message.value}
 		`
 
-		const endpoint = `https://api.telegram.org/bot5450869520:AAEGaLcQvll7_na4Cfv-GncKrCVqcUmd2kQ/sendMessage?chat_id=-802669851&parse_mode=html&text=${data}`
+		const endpoint = `https://api.telegram.org/botTOKEN_BOT/sendMessage?chat_id=CHAT_ID&parse_mode=html&text=${data}`
 
 		const options = {
 			method: 'POST',
